@@ -1,47 +1,63 @@
-import React from "react";
-import { FaShieldAlt, FaClock, FaUsers } from "react-icons/fa";
+import { Mail, Phone, Linkedin, Instagram, Facebook } from 'lucide-react';
+import React from 'react';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-blue-600 text-white py-6 px-4 md:px-20 mt-auto">
-
-      {/* Top Row: Logo + Quick Links */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-        {/* Logo */}
-        <div className="text-2xl font-bold mb-4 md:mb-0">
-          TravelAid
+    <footer className="bg-gradient-to-b from-gray-900 to-black text-white">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        {/* Company Branding */}
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-2">
+            RailAid
+          </h2>
         </div>
-      </div>
 
-        {/* Quick Links
-        <div className="flex md:flex-col gap-4 text-right md:text-right ml-auto">
-          <a href="#home" className="hover:underline">Home</a>
-          <a href="#services" className="hover:underline">Services</a>
-          <a href="#booking" className="hover:underline">Booking</a>
-          <a href="#contact" className="hover:underline">Contact</a><br />
-        </div> */}
-        
-      {/* </div> */}
+        {/* Tagline & Description */}
+        <div className="text-center mb-6 px-4">
+          <p className="text-lg font-semibold text-green-300 mb-2">
+            "Making Railway Travel Seamless & Accessible"
+          </p>
+          <p className="text-sm text-gray-400 leading-relaxed max-w-md mx-auto">
+            Your trusted companion for hassle-free luggage transport and wheelchair assistance. 
+            We prioritize your comfort, security, and independence with AI-powered smart solutions.
+          </p>
+        </div>
 
-      {/* Trust Points / Features */}
-      <div className="flex flex-col md:flex-row md:justify-between items-center mb-4">
-        <div className="flex items-center gap-2">
-          <FaUsers className="text-white" />
-          <span>Trusted by thousands</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <FaClock className="text-white" />
-          <span>24/7 Support</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <FaShieldAlt className="text-white" />
-          <span>Secure & Reliable</span>
-        </div>
-      </div>
+        {/* Contact Information */}
+        <div className="border-t border-gray-800 pt-6 mb-6">
+          <h3 className="text-center text-sm font-semibold text-gray-300 mb-4">
+            Connect With Us
+          </h3>
 
-      {/* Bottom Row: Copyright */}
-      <div className="text-center text-sm border-t border-white/20 pt-4">
-        &copy; 2025 TravelAid. All rights reserved.
+          {/* Contact Details */}
+          <div className="flex flex-col items-center gap-2 text-sm text-gray-400">
+            <a
+              href="mailto:support@railaid.com"
+              className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+            >
+              <Mail className="h-4 w-4" />
+              <span>support@railaid.com</span>
+            </a>
+            <a
+              href="tel:+911234567890"
+              className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+            >
+              <Phone className="h-4 w-4" />
+              <span>+91 123 456 7890</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="border-t border-gray-800 pt-4 text-center">
+          <p className="text-xs text-gray-500">
+            © {currentYear} RailAid. All rights reserved.
+          </p>
+
+        </div>
       </div>
     </footer>
   );

@@ -1,61 +1,279 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
+import { Shield, Zap, Heart, Users, UserCheck } from 'lucide-react';
+import StationAvailabilityCheck from '../components/StationAvailabilityCheck';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import StationCheck from './StationCheck';
 
 const Home = () => {
-  return (
-    <>isquam voluptate voluptas impedit magnam quasi, deserunt temporibus excepturi exercitationem repellendus quibusdam? Dolore ex deserunt incidunt m eaque odio corrupti.
-    Dolorum iste, perspiciatis sint nostrum laborum, aut inventore placeat, dicta delectus saepe excepturi porro? Voluptatibus, officiis iusto ea reprehenderit mollitia suscipit numquam vel sed culpa exercriam unde sit expedita vitae, illo temporibus voluptatibus deleniti eum modi alias odio itaque exercitationem. Voluptatum debitis rerum harum odio ex, error distinctio iusto vel temporibus consectetur voluptatibus.
-    Animi rerum lorem* numq Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi hic ut quasi repudiandae? Deleniti nesciunt ab quas provident ipsum? Ullam tenetur nesciunt asperiores voluptatem unde aperiam omnis quos dolorum doloribus.
-    Libero, modi hic vel inventore rerum nihil unde. Soluta atque delectus inventore laboriosam suscipit repellendus rerum. Cumque rem, eligendi atque impedit quas error, voluptate odio accusantium saepe, voluptas eaque quaerat.
-    At ex voluptatum quo aperiam obcaecati fugiat sapiente ipsa doloribus corrupti, temporibus debitis dolor quas eius praesentium suscipit voluptatibus odio quasi aspernatur architecto molestias quibusdam rerum soluta quaerat. Eius, quasi.
-    Voluptatem dolorum tenetur, libero itaque, molestiae et beatae asperiores facere ratione ex odio? Expedita facilis vero saepe dolorem ad, doloremque asperiores laborum iure rem, veritatis numquam quidem cumque quisquam blanditiis.
-    Facere quisquam deserunt error iure tempora necessitatibus natus itaque tempore deleniti doloribus, possimus sint, optio nisi? Repudiandae, maiores veritatis. Corporis doloribus natus quis, sapiente cumque nihil est nisi expedita veniam!
-    At minima possimus fugiat quisquam magnam placeat neque, libero, corporis voluptatem veniam asperiores amet nesciunt esse dolore, sed ea. Voluptas vero at sunt qui est quis, autem consequuntur facilis. Incidunt.
-    Placeat numquam, esse sapiente voluptatem nisi doloribus vel maiores obcaecati, consectetur nesciunt ut similique earum. Culpa, est at deserunt in porro cumque quibusdam eligendi deleniti, doloremque eum, facilis itaque quaerat?
-    Non, veritatis pariatur deserunt fuga minima voluptatum sit vero autem ut eius mollitia, accusamus accusantium odio. Eos, ipsum unde deleniti natus inventore dolores, sunt praesentium adipisci magni vel amet expedita.
-    Aliquam consequatur natus commodi consequuntur corrupti architecto necessitatibus cumque ipsam quidem, maxime ipsa ut impedit minus optio assumenda sed, voluptas maiores soluta sunt rerum. Ea sunt omnis praesentium ipsam fuga.
-    Nemo, velit, iusto enim odio repellat ex fugiat consectetur placeat repudiandae nisi asperiores quam? Rem reiciendis, cumque odio nostrum enim qui corrupti, voluptate necessitatibus omnis ea suscipit, quas accusantium non.
-    Iste vel modi molestias in nam nemo. Nostrum molestias eaque voluptatibus modi vero autem nulla inventore sequi cupiditate quae accusantium deserunt, nemo eveniet, ea dignissimos unde laborum optio. Ex, tempore!
-    Illum, ullam maxime non delectus ad beatae quibusdam ducimus, harum obcaecati necessitatibus veniam laborum unde? Doloremque voluptas distinctio numquam corporis obcaecati, blanditiis, nobis voluptate sequi saepe aperiam illo natus vero.
-    Autem eaque totam vero dolore quibusdam velit veniam voluptatum ullam animi nobis quo temporibus, nihil vitae quas, quia veritatis aliquam numquam eos esse iste enim doloremque porro est. Atque, deleniti?
-    Minus ullam velit dolor ipsam excepturi porro eaque illum quaerat sunt vero similique enim placeat cum, aut nostrum! Labore animi ex neque eaque numquam est non suscipit similique explicabo maiores.
-    Et, recusandae? Ut nihil autem est a eius quaerat sunt maiores expedita quod at numquam, architecto doloremque ratione consequatur illo eaque veritatis. Vel quaerat porro cupiditate facilis, veniam nobis amet?
-    Quis commodi modi, doloremque iste harum accusantium nemo pariatur delectus sint molestiae veniam rerum, molestias voluptas cum dolore atque recusandae obcaecati dolor nam adipisci deserunt porro nulla. Perspiciatis, fugiat repellat.
-    Voluptatum fuga natus recusandae laboriosam exercitationem error, accusamus labore impedit officiis, beatae totam assumenda harum est laudantium excepturi asperiores illo eius illum nulla praesentium! Explicabo voluptates natus eos incidunt ut?
-    Non vitae repellendus aliquam deserunt perspiciatis alias illo eos enim. Voluptas, suscipit temporibus molestiae itaque corrupti aut, deleniti ab eveniet magni, rerum vel earum molestias eligendi placeat natus adipisci animi?
-    Quas placeat minima in, vitae suscipit ullam voluptatem fugit laborum modi ipsa illo! Adipisci ipsa officia quasi magni animi, asperiores perferendis fugiat veritatis aliquam, aperiam nam! Voluptates quae doloremque placeat.
-    Soluta voluptatem nemo sequi tenetur quam id minima quod aperiam impedit aspernatur nam repudiandae illo sunt consequuntur voluptates sed ad dolores totam quasi, tempore est vitae quia! Harum, officiis aperiam?
-    Eligendi impedit corporis esse at possimus voluptatum adipisci. Quisquam aut nihil sed ad similique atque perspiciatis culpa sunt mollitia. Iste commodi et blanditiis laboriosam pariatur, architecto sapiente autem modi eum.
-    Dicta aperiam, facere, quae officia dolores obcaecati quo natus nihil iusto est exercitationem odio iste quod at rerum nobis. Saepe tempora quam cumque deserunt beatae eum impedit dolorum facere corporis.
-    Quos quo consequatur alias dolorem aspernatur veniam similique at, hic ipsa. Necessitatibus reiciendis aperiam nemo voluptate accusantium quasi, hic nostrum impedit ab et, maiores voluptatibus rerum minima laboriosam repellendus saepe!
-    Beatae animi doloremque cupiditate reiciendis facilis magni, sequi aut! Autem, aperiam nisi cumque recusandae animi similique. Sapiente consectetur, error qui dolorum perspiciatis reprehenderit animi dignissimos, laboriosam sed dolores adipisci fuga?
-    Perspiciatis dolorem commodi voluptatibus soluta a, temporibus autem rem ex vero tenetur ab nam corrupti reprehenderit unde dignissimos iste accusamus eaque possimus veritatis eum iure voluptate alias hic in. Ea.
-    Minus repellendus doloremque quae velit atque aspernatur voluptatibus eligendi ipsum quaerat maiores, mollitia, harum nobis ducimus impedit, libero iure neque fugit inventore autem placeat in sequi sapiente accusantium. Obcaecati, nisi?
-    Ex culpa necessitatibus, eos non labore saepe fugiat. Velit facilis debitis exercitationem doloremque asperiores quas tempora deleniti, aperiam nisi dignissimos, voluptates minima. Magnam, nihil aliquid mollitia optio temporibus libero nesciunt.
-    Laboriosam doloribus distinctio atque maiores nemo a excepturi similique. Necessitatibus similique optio asperiores iste eaque distinctio consectetur, ullam odit repellendus aut quia fugit consequatur? Dignissimos qui doloremque quidem iste veritatis.
-    Consequatur deleniti dolorem sequi iste. Reprehenderit quidem eius quibusdam ex? Necessitatibus, pariatur cum mollitia id hic quas expedita aut eligendi neque consequatur ipsa quam quod repellat accusamus dolore nostrum itaque.
-    At, voluptas qui est cum quibusdam molestias odit non quas, voluptatum omnis veniam accusantium labore quaerat numquam atque laboriosam quis velit temporibus esse vero architecto dolores. Maiores commodi placeat dolor!
-    Perferendis iure eveniet ut voluptatibus ratione explicabo minima deserunt ipsa quaerat illo. Repellendus, minus aperiam? Cum harum perspiciatis quos sequi vel! Voluptatibus eum iure tempore accusantium nihil libero deleniti delectus.
-    Neque voluptatem nemo nesciunt facilis. Maxime nihil officia nam doloremque dolorem sed, corrupti velit, commodi, pariatur facilis ea unde molestias tempora laboriosam natus ullam magnam autem numquam ducimus repudiandae nesciunt.
-    Quisquam temporibus illo adipisci, facere soluta enim. Quisquam aliquid ex itaque labore sequi, ipsam incidunt tempora dolor asperiores commodi nemo repudiandae, fugiat possimus non soluta perferendis doloribus expedita voluptates dolorum.
-    Ab possimus accusantium aliquam perspiciatis nam maxime! Praesentium, earum eligendi! Dicta quia veniam cumque obcaecati debitis facere ratione eos doloremque sed! Ullam aperiam vero dicta, aliquam commodi ipsam quae consectetur.
-    Quis ullam corrupti saepe delectus minus velit fugiat quam molestias ad error dignissimos nihil necessitatibus, ut perferendis impedit molestiae aliquam nesciunt natus in nulla id adipisci eius! Et, rerum repudiandae.
-    Rerum repellat perspiciatis veniam laudantium cumque vitae iusto, magnam velit minima commodi debitis adipisci iure, modi nobis. Libero rem eum eaque unde. Repellendus, vero quas. Eaque eveniet ad consequuntur accusamus.
-    Non ducimus quaerat eligendi ut sequi exercitationem ipsa nesciunt. Maiores quam dolores aspernatur adipisci architecto dolor in nihil sapiente, facilis quasi commodi est minima obcaecati soluta officiis deleniti. Doloribus, reiciendis!
-    Ducimus repudiandae nobis optio provident laboriosam, dolorem nulla laborum. Velit eos impedit inventore dicta, sequi quasi quae nobis. Ipsum earum hic fugit voluptates quasi debitis voluptate blanditiis autem nemo vitae.
-    Porro quos nisi possimus animi odio ipsa, voluptates praesentium natus laudantium fugit aut earum numquam ratione ut eos ducimus est obcaecati magni quo debitis maxime rem deserunt quam. Nemo, ipsum.
-    Iste cum veniam ipsam soluta qui reprehenderit, quasi, fuga repudiandae vel hic numquam illum accusamus neque libero provident eos dolore consectetur. Nemo excepturi veritatis et maxime, consectetur tempore reiciendis voluptatum.
-    Aut saepe doloremque, et maiores nihil culpa. Suscipit reiciendis sed enim, ratione corrupti ea, cum quam ab ullam sunt, mollitia assumenda officiis quo possimus? Maxime porro laboriosam ut tempore facere.
-    Quos sint iure odio rerum quas laborum rem soluta, inventore omnis quaerat accusamus fuga itaque nesciunt minus tempore eos repellendus? Ullam, pariatur! Et adipisci quod aliquam impedit delectus tempore quo.
-    Architecto sit voluptatem adipisci, libero reiciendis nostrum similique, omnis, quis ab ducimus molestias beatae blanditiis modi doloremque quae rem. Molestiae ipsam, odio ducimus quam laboriosam exercitationem a dolorem nisi iure!
-    Laboriosam commodi illo nisi alias impedit enim. Quas odio saepe pariatur numquam recusandae ipsum modi expedita harum, aut inventore doloribus provident necessitatibus quos mollitia maiores sit minima, quidem assumenda omnis!
-    Odio sequi laborum hic sint quod natus suscipit sapiente omnis accusamus commodi veritatis consequatur deleniti officiis illum itaque ea inventore, cupiditate quas qui est? Quasi ipsa eos magni tempore enim!
-    In autem perspiciatis cumque dolores ullam inventore unde debitis odit sapiente repudiandae eum quibusdam quod temporibus sit eveniet hic eligendi, sint expedita? Veniam modi saepe deserunt maxime facilis alias quos.
-    Quos aliquid illo corporis beatae delectus ex quaerat blanditiis fugit, iste alias, obcaecati suscipit distinctio fuga voluptate. Veritatis provident magnam incidunt fugiat repellat tempora sed. Nulla neque ratione a. Molestiae.
-    Impedit deserunt sint quod, ipsum eaque ullam praesentium modi harum, et dolor voluptas nihil tempore, rerum dolorem possimus eos. Voluptatem unde veritatis sit mollitia similique consequatur odit repellendus vitae eius.
-    Suscipit totam, quam quod reiciendis quaerat dolore! Amet quasi vitae ipsa provident corporis quo libero voluptate, quis debitis laborum dolores explicabo! Maxime dicta quo eaque saepe possimus dignissimos aliquam reiciendis!
-    Dolorem autem ratione, iusto porro, nisi, eligendi eaque quae excepturi velit consectetur voluptates cum recusandae modi quod magni accusamus fugit deserunt earum nesciunt nemo nobis. Odio tempora dolor eum accusantium. uam veniam quia labore velit officiis libero eos in, nemo corporis assumenda enim! Eos sapiente cumque illum provident dignissimos repellendus? Voluptatem quos sed, modi quaerat soluta deserunt autem.
-    </>
-  )
-}
+  const [isPaused, setIsPaused] = useState(false);
+  const [stationCheck, setStationCheck] = useState(true);
+  const imageGallery = [
+    "/images/luggage1.jpg",
+    "/images/wheelchair1.jpg",
+    "/images/train1.jpg",
+    "/images/helpdesk.jpg",
+    "/images/staff.jpg",
+    "/images/service.jpg",
+  ];   
 
-export default Home
+  const reviews = [
+    {
+      name: "Ravi Kumar",
+      text: "RailAid made my journey stress-free. The luggage pickup was on time, and the support staff were kind.",
+    },
+    {
+      name: "Meera Joshi",
+      text: "Very helpful app! My mother used the wheelchair service easily without confusion.",
+    },
+    {
+      name: "Anil Patel",
+      text: "Best app for senior citizens! Simple UI and amazing support.",
+    },
+  ];
+
+  return (
+    <>
+    {stationCheck ? (<StationCheck setStationCheck={setStationCheck}/>) :
+    (
+      <>
+      <Navbar/>
+      <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-900 via-gray-900 to-slate-800 text-gray-100">
+     
+      {/* Hero Section */}
+      <section className="flex flex-col items-center text-center px-6 py-16">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+          Welcome to <span className="text-blue-400">RailAid</span>
+        </h1>
+        <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
+          Your station partner that simplifies railway journeys — from luggage
+          booking to wheelchair assistance, everything at your fingertips.
+        </p>
+        <div className='pt-7'>
+          <StationAvailabilityCheck/>
+        </div>
+        
+        <div className="mt-8 flex gap-4 flex-wrap justify-center">
+          <button className="px-6 py-3 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200 font-medium">
+            Explore Services
+          </button>
+        </div>
+      </section>
+
+
+      {/* Why Choose RailAid */}
+      <section className="max-w-6xl mx-auto px-6 py-12">
+        <h2 className="text-3xl font-bold text-center text-blue-400 mb-10">
+          Why Choose RailAid?
+        </h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          {/* Verified Drivers */}
+          <div className="bg-slate-800/60 rounded-xl border border-slate-700 shadow-lg p-6 hover:bg-slate-800/80 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-blue-600/20 rounded-lg">
+                <UserCheck className="h-6 w-6 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-blue-400">
+                Verified Drivers
+              </h3>
+            </div>
+            <p className="text-gray-300 text-sm">
+              All our service providers are background-checked and trained to assist you professionally and safely.
+            </p>
+          </div>
+
+          {/* Easy Access */}
+          <div className="bg-slate-800/60 rounded-xl border border-slate-700 shadow-lg p-6 hover:bg-slate-800/80 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-green-600/20 rounded-lg">
+                <Zap className="h-6 w-6 text-green-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-green-400">
+                Easy to Access
+              </h3>
+            </div>
+            <p className="text-gray-300 text-sm">
+              Large buttons and simple interface make booking services quick and hassle-free for everyone.
+            </p>
+          </div>
+
+          {/* Friendly Support */}
+          <div className="bg-slate-800/60 rounded-xl border border-slate-700 shadow-lg p-6 hover:bg-slate-800/80 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-purple-600/20 rounded-lg">
+                <Heart className="h-6 w-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-purple-400">
+                Friendly Drivers
+              </h3>
+            </div>
+            <p className="text-gray-300 text-sm">
+              Our drivers are courteous and ready to help with luggage, wheelchairs, and platform guidance.
+            </p>
+          </div>
+
+          {/* Low & Fair Pricing */}
+          <div className="bg-slate-800/60 rounded-xl border border-slate-700 shadow-lg p-6 hover:bg-slate-800/80 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-yellow-600/20 rounded-lg">
+                <Shield className="h-6 w-6 text-yellow-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-yellow-400">
+                Low & Fair Pricing
+              </h3>
+            </div>
+            <p className="text-gray-300 text-sm">
+              Affordable electric ferry services and assistance with transparent pricing — no hidden charges.
+            </p>
+          </div>
+
+          {/* For People with Disabilities */}
+          <div className="bg-slate-800/60 rounded-xl border border-slate-700 shadow-lg p-6 hover:bg-slate-800/80 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-blue-600/20 rounded-lg">
+                <svg className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10" strokeWidth="2"/>
+                  <path strokeWidth="2" d="M12 8v4m0 4h.01"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-blue-400">
+                For People with Disabilities
+              </h3>
+            </div>
+            <p className="text-gray-300 text-sm">
+              Dedicated wheelchair assistance and accessibility support for a comfortable and independent journey.
+            </p>
+          </div>
+
+          {/* For Seniors */}
+          <div className="bg-slate-800/60 rounded-xl border border-slate-700 shadow-lg p-6 hover:bg-slate-800/80 transition-all duration-300">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-2 bg-orange-600/20 rounded-lg">
+                <Users className="h-6 w-6 text-orange-400" />
+              </div>
+              <h3 className="text-xl font-semibold text-orange-400">
+                For Seniors
+              </h3>
+            </div>
+            <p className="text-gray-300 text-sm">
+              Safe and quick station access with extra care for elderly passengers who need support during travel.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Auto-Sliding Image Gallery */}
+      <section className="max-w-full px-6 py-12 overflow-hidden">
+        <h2 className="text-2xl font-bold text-center text-blue-400 mb-8">
+          Our Services in Action
+        </h2>
+        
+        <div 
+          className="relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
+        >
+          <div className={`flex gap-4 ${isPaused ? '' : 'animate-slide'}`}>
+            {[...imageGallery, ...imageGallery, ...imageGallery].map((src, idx) => (
+              <div
+                key={idx}
+                className="flex-shrink-0 w-48 h-48 rounded-lg overflow-hidden shadow-lg bg-slate-700"
+              >
+                <img
+                  src={src}
+                  alt={`Service ${(idx % imageGallery.length) + 1}`}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-500 text-sm">Image ' + ((idx % imageGallery.length) + 1) + '</div>';
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <p className="text-center text-gray-400 text-sm mt-4">
+          Touch or hover to pause
+        </p>
+      </section>
+
+      {/* About / What We Provide */}
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold text-center text-blue-400 mb-6">
+          What We Provide
+        </h2>
+        <p className="text-gray-300 text-center max-w-3xl mx-auto leading-relaxed mb-10">
+          RailAid is an AI-powered railway support system designed to help
+          passengers travel smoothly. Whether it's elderly assistance,
+          luggage booking, or platform navigation — we ensure everyone travels
+          safely, efficiently, and affordably.
+        </p>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            "Instant  Booking",
+            "Affordable Service Pricing",
+            "Trained Ground Staff",
+            "24/7 Customer Support",
+          ].map((feature, i) => (
+            <div
+              key={i}
+              className="bg-slate-800/60 p-5 rounded-lg border border-slate-700 hover:bg-slate-800/80 transition-all duration-200 text-center"
+            >
+              <p className="font-medium text-gray-200">{feature}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="bg-slate-800/50 border-t border-slate-700 py-16 px-6">
+        <h2 className="text-3xl font-bold text-center text-blue-400 mb-8">
+          What Our Passengers Say
+        </h2>
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {reviews.map((review, i) => (
+            <div
+              key={i}
+              className="bg-slate-900/70 p-6 rounded-lg shadow-md border border-slate-700 hover:bg-slate-800/80 transition-all duration-200"
+            >
+              <p className="text-gray-300 italic mb-3">"{review.text}"</p>
+              <p className="text-sm text-blue-400 font-semibold">
+                — {review.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <style>{`
+        @keyframes slide {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-192px * 6 - 16px * 6));
+          }
+        }
+        .animate-slide {
+          animation: slide 25s linear infinite;
+        }
+      `}</style>
+    <Footer/>
+    </div>
+    </>
+    )}
+    
+    </>
+
+    
+  );
+};
+
+export default Home;
