@@ -7,7 +7,6 @@ import Footer from '../components/Footer';
 const StationCheck = (props) => {
   return (
     <>
-    <Navbar/>
 
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-gray-900 to-slate-800 text-gray-100 flex items-center justify-center px-4 py-8">
       <div className="max-w-md w-full">
@@ -35,7 +34,6 @@ const StationCheck = (props) => {
 
       </div>
     </div>
-    <Footer/>
     </>
   )
 }

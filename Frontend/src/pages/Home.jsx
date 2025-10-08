@@ -38,7 +38,6 @@ const Home = () => {
     {stationCheck ? (<StationCheck setStationCheck={setStationCheck}/>) :
     (
       <>
-      <Navbar/>
       <div className="min-h-screen flex flex-col bg-gradient-to-b from-slate-900 via-gray-900 to-slate-800 text-gray-100">
      
       {/* Hero Section */}
@@ -265,7 +264,6 @@ const Home = () => {
           animation: slide 25s linear infinite;
         }
       `}</style>
-    <Footer/>
     </div>
     </>
     )}

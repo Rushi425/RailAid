@@ -4,9 +4,9 @@ import { BrowserRouter } from 'react-router-dom'
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Home/>
-      </BrowserRouter>
+      </BrowserRouter> */}
       
     </div>
   )
