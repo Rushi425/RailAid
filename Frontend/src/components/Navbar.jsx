@@ -1,20 +1,22 @@
 import { useState } from "react";
-import { Menu, X, Home, Info, ShieldQuestionMark, Settings, BaggageClaim, UserStar, Forklift } from "lucide-react";
+import { Menu, X, Home, Info, ShieldQuestionMark, Settings, BaggageClaim, UserStar, Forklift, Plus, Minus, RotateCcw } from "lucide-react";
 import React from "react";
+import { useTextSize } from "../context/TextSizeContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { textSize, increaseTextSize, decreaseTextSize, resetTextSize, textSizePercentage } = useTextSize();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navLinks = [
     { name: "Home", path: "/", icon: <Home size={18} /> },
     // Passenger Section
-    { name: "Book Assistance", path: "/user/booking", icon: <BaggageClaim size={18} /> },
+    { name: "Book Assistance", path: "/booking", icon: <BaggageClaim size={18} /> },
  
     // Admin/Staff Section
-    { name: "Staff Login", path: "/staff/login", icon: <Forklift size={18} /> },
-    { name: "Admin Login", path: "/admin/login", icon: <UserStar size={18} /> },
+    { name: "Staff Login", path: "/staff-login", icon: <Forklift size={18} /> },
+    { name: "Admin Login", path: "/admin-login", icon: <UserStar size={18} /> },
 
     // Services & Info
     { name: "Our Services", path: "/services", icon: <Settings size={18} /> },
@@ -31,13 +33,49 @@ const Navbar = () => {
             RailAid
           </h1>
 
-          {/* Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="text-gray-200 p-2 rounded-lg hover:bg-slate-800 transition-all duration-200 focus:outline-none"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Text Size Controls and Menu Button */}
+          <div className="flex items-center gap-2">
+            {/* Text Size Controls */}
+            <div className="flex items-center gap-1 bg-slate-800/50 rounded-lg p-1">
+              <button
+                onClick={decreaseTextSize}
+                className="text-gray-200 p-1.5 rounded hover:bg-slate-700 transition-all duration-200 focus:outline-none"
+                title="Decrease text size"
+                disabled={textSize <= 0.8}
+              >
+                <Minus className="h-4 w-4" />
+              </button>
+              
+              <span className="text-gray-300 text-xs px-2 min-w-[3rem] text-center">
+                Text Size
+              </span>
+              
+              <button
+                onClick={increaseTextSize}
+                className="text-gray-200 p-1.5 rounded hover:bg-slate-700 transition-all duration-200 focus:outline-none"
+                title="Increase text size"
+                disabled={textSize >= 1.5}
+              >
+                <Plus className="h-4 w-4" />
+              </button>
+              
+              <button
+                onClick={resetTextSize}
+                className="text-gray-200 p-1.5 rounded hover:bg-slate-700 transition-all duration-200 focus:outline-none"
+                title="Reset text size"
+              >
+                <RotateCcw className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* Menu Button */}
+            <button
+              onClick={toggleMenu}
+              className="text-gray-200 p-2 rounded-lg hover:bg-slate-800 transition-all duration-200 focus:outline-none"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
