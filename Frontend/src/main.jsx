@@ -12,7 +12,11 @@ import Support from './pages/Support.jsx'
 import AdminLogin from './pages/AdminLogin.jsx'
 import StaffLogin from './pages/StaffLogin.jsx'
 import { TextSizeProvider } from './context/TextSizeContext.jsx'
+import UserLogin from './pages/UserLogin.jsx'
+import UserRegister from './pages/UserRegister.jsx'
+
 const router = createBrowserRouter([
+
   {
     path: '/',
     element: <Layout/>,
@@ -45,7 +49,9 @@ const router = createBrowserRouter([
       {
         path: '/support',
         element: <Support/>
-      }
+      },
+      { path: '/user-login', element: <UserLogin /> },
+      { path: '/user-register', element: <UserRegister /> },
     ]
   }
 ])

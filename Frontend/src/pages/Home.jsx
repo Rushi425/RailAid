@@ -5,6 +5,7 @@ import StationAvailabilityCheck from '../components/StationAvailabilityCheck';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import StationCheck from './StationCheck';
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [isPaused, setIsPaused] = useState(false);
@@ -59,6 +60,34 @@ const Home = () => {
           </button>
         </div>
       </section>
+
+      {/* Authentication Section */}
+ 
+             
+
+{/* Hero Section */}
+<section className="flex flex-col items-center text-center px-6 py-16">
+  <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+    Welcome to <span className="text-blue-400">RailAid</span>
+  </h1>
+  <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
+    Your station partner that simplifies railway journeys — from luggage
+    booking to wheelchair assistance, everything at your fingertips.
+  </p>
+  <div className='pt-7'>
+    <StationAvailabilityCheck/>
+  </div>
+  
+  <div className="mt-8 flex gap-4 flex-wrap justify-center">
+    <button className="px-6 py-3 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200 font-medium">
+      Explore Services
+    </button>
+  </div>
+</section>
+
+
+
+
 
 
       {/* Why Choose RailAid */}

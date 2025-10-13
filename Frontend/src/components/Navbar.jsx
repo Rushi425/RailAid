@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { Menu,TramFront, X, Home, Info, ShieldQuestionMark, Settings, BaggageClaim, UserStar, Forklift, Plus, Minus, RotateCcw } from "lucide-react";
+import { Menu, X, Home, Info, ShieldQuestionMark, Settings, BaggageClaim, UserStar, Forklift, Plus, Minus, RotateCcw } from "lucide-react";
 import React from "react";
 import { useTextSize } from "../context/TextSizeContext";
+import { handleLogout } from "../utils/authFunctions";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { textSize, increaseTextSize, decreaseTextSize, resetTextSize, textSizePercentage } = useTextSize();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -29,8 +32,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <h1 className="flex items-center gap-2 text-white text-xl font-bold tracking-wide">
-            <TramFront className="h-7 w-7 text-blue-400" />
+
+          <h1 className="text-white text-2xl font-bold tracking-wide">
             RailAid
           </h1>
 
@@ -59,6 +62,7 @@ const Navbar = () => {
               >
                 <Plus className="h-4 w-4" />
               </button>
+              
               <button
                 onClick={resetTextSize}
                 className="text-gray-200 p-1.5 rounded hover:bg-slate-700 transition-all duration-200 focus:outline-none"
@@ -67,6 +71,23 @@ const Navbar = () => {
                 <RotateCcw className="h-4 w-4" />
               </button>
             </div>
+
+            <div className="flex gap-2 ml-4">
+    <button
+    type="button"
+       onClick={() => navigate("/user-login")}    
+      className="px-4 py-2 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200"
+    >
+      Login
+    </button>
+    <button
+    type="button"
+      onClick={() => navigate("/user-register")}
+      className="px-4 py-2 border border-green-500 text-green-400 rounded-lg hover:bg-green-600/10 transition-all duration-200"
+    >
+      Register
+    </button>
+  </div>
 
             {/* Menu Button */}
             <button
@@ -124,6 +145,10 @@ const Navbar = () => {
           © 2025 RailAid
         </div>
       </div>
+       <nav>
+      
+      <button onClick={handleLogout}>Logout</button>
+    </nav>
     </nav>
   );
 };
