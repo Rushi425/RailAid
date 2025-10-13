@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Home, Info, ShieldQuestionMark, Settings, BaggageClaim, UserStar, Forklift, Plus, Minus, RotateCcw } from "lucide-react";
+import { Menu,TramFront, X, Home, Info, ShieldQuestionMark, Settings, BaggageClaim, UserStar, Forklift, Plus, Minus, RotateCcw } from "lucide-react";
 import React from "react";
 import { useTextSize } from "../context/TextSizeContext";
 
@@ -29,7 +29,8 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <h1 className="text-white text-2xl font-bold tracking-wide">
+          <h1 className="flex items-center gap-2 text-white text-xl font-bold tracking-wide">
+            <TramFront className="h-7 w-7 text-blue-400" />
             RailAid
           </h1>
 
@@ -58,7 +59,6 @@ const Navbar = () => {
               >
                 <Plus className="h-4 w-4" />
               </button>
-              
               <button
                 onClick={resetTextSize}
                 className="text-gray-200 p-1.5 rounded hover:bg-slate-700 transition-all duration-200 focus:outline-none"

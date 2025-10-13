@@ -59,3 +59,4 @@ export const TextSizeProvider = ({ children }) => {
     </TextSizeContext.Provider>
   );
 };
+
