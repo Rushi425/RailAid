@@ -10,6 +10,8 @@ import Support from "./pages/Support";
 import BookingService from "./pages/BookingService";
 import StaffLogin from "./pages/StaffLogin";
 import AdminLogin from "./pages/AdminLogin";
+import UserLogin from "./pages/UserLogin";
+import UserRegister from "./pages/UserRegister";
 
 const App = () => {
   return (
@@ -26,6 +28,10 @@ const App = () => {
         <Route path="/booking" element={<BookingService />} />
         <Route path="/staff-login" element={<StaffLogin />} />
         <Route path="/admin-login" element={<AdminLogin />} />
+        
+        {/* User routes */}
+        <Route path="/user-login" element={<UserLogin />} />
+        <Route path="/user-register" element={<UserRegister />} />
       </Routes>
     </Router>
   );
