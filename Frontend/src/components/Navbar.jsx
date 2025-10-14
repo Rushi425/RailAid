@@ -72,22 +72,6 @@ const Navbar = () => {
               </button>
             </div>
 
-            <div className="flex gap-2 ml-4">
-    <button
-    type="button"
-       onClick={() => navigate("/user-login")}    
-      className="px-4 py-2 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200"
-    >
-      Login
-    </button>
-    <button
-    type="button"
-      onClick={() => navigate("/user-register")}
-      className="px-4 py-2 border border-green-500 text-green-400 rounded-lg hover:bg-green-600/10 transition-all duration-200"
-    >
-      Register
-    </button>
-  </div>
 
             {/* Menu Button */}
             <button
@@ -146,8 +130,6 @@ const Navbar = () => {
         </div>
       </div>
        <nav>
-      
-      <button onClick={handleLogout}>Logout</button>
     </nav>
     </nav>
   );

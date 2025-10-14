@@ -2,12 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import { Shield, Zap, Heart, Users, UserCheck } from 'lucide-react';
 import StationAvailabilityCheck from '../components/StationAvailabilityCheck';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
 import StationCheck from './StationCheck';
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [isPaused, setIsPaused] = useState(false);
   const [stationCheck, setStationCheck] = useState(true);
   const imageGallery = [
@@ -50,46 +49,27 @@ const Home = () => {
           Your station partner that simplifies railway journeys — from luggage
           booking to wheelchair assistance, everything at your fingertips.
         </p>
+        <div className="mt-8 flex gap-4 flex-wrap justify-center">
+          <button
+          onClick ={() => navigate("/user-login")}
+          className="px-6 py-3 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200 font-medium">
+            Get started
+          </button>
+        </div>
         <div className='pt-7'>
           <StationAvailabilityCheck/>
         </div>
         
         <div className="mt-8 flex gap-4 flex-wrap justify-center">
-          <button className="px-6 py-3 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200 font-medium">
+          <button
+          onClick ={() => navigate("/services")}
+          className="px-6 py-3 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200 font-medium">
             Explore Services
           </button>
         </div>
       </section>
 
-      {/* Authentication Section */}
  
-             
-
-{/* Hero Section */}
-<section className="flex flex-col items-center text-center px-6 py-16">
-  <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-    Welcome to <span className="text-blue-400">RailAid</span>
-  </h1>
-  <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-    Your station partner that simplifies railway journeys — from luggage
-    booking to wheelchair assistance, everything at your fingertips.
-  </p>
-  <div className='pt-7'>
-    <StationAvailabilityCheck/>
-  </div>
-  
-  <div className="mt-8 flex gap-4 flex-wrap justify-center">
-    <button className="px-6 py-3 border border-blue-500 text-blue-400 rounded-lg hover:bg-blue-600/10 transition-all duration-200 font-medium">
-      Explore Services
-    </button>
-  </div>
-</section>
-
-
-
-
-
-
       {/* Why Choose RailAid */}
       <section className="max-w-6xl mx-auto px-6 py-12">
         <h2 className="text-3xl font-bold text-center text-blue-400 mb-10">
@@ -225,10 +205,6 @@ const Home = () => {
             ))}
           </div>
         </div>
-
-        <p className="text-center text-gray-400 text-sm mt-4">
-          Touch or hover to pause
-        </p>
       </section>
 
       {/* About / What We Provide */}

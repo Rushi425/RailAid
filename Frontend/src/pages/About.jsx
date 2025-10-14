@@ -20,7 +20,6 @@ const About = () => {
             services, receive real-time updates, and interact with an AI-powered chatbot for instant guidance.
           </p>
         </div>
-     
       {/* Key Challenges Addressed */}
         <div className="bg-white p-8 rounded-lg shadow-md mb-6">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4">Key Challenges Addressed</h2>
@@ -171,16 +170,7 @@ const About = () => {
                 AI-powered optimization for efficient service
               </p>
             </div>
-            <div className="text-center p-4">
-              <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3">
-                <span className="text-2xl">📱</span>
-              </div>
-              <h3 className="font-semibold text-gray-800 mb-2">Mobile-Friendly</h3>
-              <p className="text-gray-600 text-sm">
-                Accessible across all devices and platforms
-              </p>
             </div>
-          </div>
         </div>
       </div>
     </div>

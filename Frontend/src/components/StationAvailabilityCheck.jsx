@@ -1,8 +1,6 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Search, CheckCircle, XCircle, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 
 const StationAvailabilityCheck = () => {
   const navigate = useNavigate();
@@ -25,15 +23,16 @@ const StationAvailabilityCheck = () => {
     { name: 'Solapur Junction', code: 'SUR', city: 'Solapur' },
   ];
 
-  const filteredStations = availableStations.filter(station =>
-    station.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    station.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    station.city.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredStations = availableStations.filter(
+    (station) =>
+      station.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      station.code.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      station.city.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleCheckAvailability = () => {
     if (selectedStation) {
-      const station = availableStations.find(s => s.code === selectedStation);
+      const station = availableStations.find((s) => s.code === selectedStation);
       if (station) {
         setIsAvailable(true);
         setIsChecked(true);
@@ -60,20 +59,18 @@ const StationAvailabilityCheck = () => {
       </p>
 
       {/* Search Input */}
-      <div className="relative mb-4">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-          <input
-            type="text"
-            placeholder="Search station name or code..."
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-              setIsChecked(false);
-            }}
-            className="w-full pl-10 pr-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
+      <div className="relative">
+        {/* <Search className="absolute  left-0 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5 pointer-events-none" /> */}
+        <input
+          type="text"
+          placeholder="🔍  Search station name or code..."
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+            setIsChecked(false);
+          }}
+          className="w-full pl-12 lef pr-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
 
         {/* Dropdown Results */}
         {searchQuery && filteredStations.length > 0 && (
@@ -85,7 +82,9 @@ const StationAvailabilityCheck = () => {
                 className="w-full text-left px-4 py-3 hover:bg-slate-800 transition-colors border-b border-slate-700 last:border-b-0"
               >
                 <p className="font-medium text-white text-sm">{station.name}</p>
-                <p className="text-xs text-gray-400">{station.code} • {station.city}</p>
+                <p className="text-xs text-gray-400">
+                  {station.code} • {station.city}
+                </p>
               </button>
             ))}
           </div>
@@ -103,7 +102,7 @@ const StationAvailabilityCheck = () => {
         <div className="mb-4 p-3 bg-blue-600/20 border border-blue-500 rounded-lg">
           <p className="text-xs text-gray-300 mb-1">Selected Station:</p>
           <p className="font-semibold text-blue-400 text-sm">
-            {availableStations.find(s => s.code === selectedStation)?.name}
+            {availableStations.find((s) => s.code === selectedStation)?.name}
           </p>
         </div>
       )}
@@ -126,12 +125,14 @@ const StationAvailabilityCheck = () => {
             <CheckCircle className="h-6 w-6 text-green-400 flex-shrink-0" />
             <div>
               <p className="font-semibold text-green-400">Service Available!</p>
-              <p className="text-xs text-gray-300">RailAid services are active at this station</p>
+              <p className="text-xs text-gray-300">
+                RailAid services are active at this station
+              </p>
             </div>
           </div>
-          
+
           <button
-            onClick={() => navigate('/user/booking')}
+            onClick={() => navigate('/user-login')}
             className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center gap-2"
           >
             Book Your Slot
@@ -146,7 +147,9 @@ const StationAvailabilityCheck = () => {
           <XCircle className="h-6 w-6 text-red-400 flex-shrink-0" />
           <div>
             <p className="font-semibold text-red-400">Service Not Available</p>
-            <p className="text-xs text-gray-300">Please select a valid station from the list</p>
+            <p className="text-xs text-gray-300">
+              Please select a valid station from the list
+            </p>
           </div>
         </div>
       )}

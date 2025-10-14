@@ -1,7 +1,6 @@
 // src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-
 const firebaseConfig = {
   apiKey: "AIzaSyAax3H-1U8ZC0eUjr_1z9Og-57Wyz5hwBU",
   authDomain: "electric-ferry-booking-system.firebaseapp.com",

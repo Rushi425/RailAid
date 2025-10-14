@@ -56,7 +56,7 @@ const StaffLogin = () => {
     if (validateForm()) {
       setIsLoading(true);
       setTimeout(() => {
-        console.log('Staff Login data:', formData);
+        // console.log('Staff Login data:', formData);
         alert(`Login successful as ${serviceTypes.find(s => s.value === formData.serviceType).label}!`);
         setIsLoading(false);
       }, 1500);
@@ -236,40 +236,7 @@ const StaffLogin = () => {
               )}
             </button>
           </div>
-
-         
-
-          {/* Support Link */}
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-500">
-              Need help with login?{' '}
-              <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">
-                Contact Supervisor
-              </a>
-            </p>
-          </div>
-        </div>
-
-        {/* Quick Stats */}
-        <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-          <div className="bg-white rounded-lg shadow-md p-4">
-            <div className="text-2xl font-bold text-blue-600">24/7</div>
-            <div className="text-xs text-gray-600 mt-1">Support</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-4">
-            <div className="text-2xl font-bold text-green-600">500+</div>
-            <div className="text-xs text-gray-600 mt-1">Active Staff</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-4">
-            <div className="text-2xl font-bold text-indigo-600">4.8★</div>
-            <div className="text-xs text-gray-600 mt-1">Avg Rating</div>
-          </div>
-        </div>
-
-        {/* Footer */}
-        <div className="text-center mt-6 text-sm text-gray-600">
-          <p>© 2025 TravelAid Staff Portal - DKTE Institute</p>
-        </div>
+      </div>
       </div>
     </div>
   );
