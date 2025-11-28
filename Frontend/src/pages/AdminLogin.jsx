@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
 const AdminLogin = () => {
@@ -11,8 +9,12 @@ const AdminLogin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
+    // TODO: Implement MongoDB-based authentication
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      // Placeholder for MongoDB authentication
+      // await loginAdmin(email, password);
+      console.log("Admin login attempt:", { email, password });
       alert("Login successful!");
       navigate("/admin-dashboard");
     } catch (err) {

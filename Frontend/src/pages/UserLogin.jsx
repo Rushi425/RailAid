@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
 const UserLogin = () => {
@@ -13,12 +11,14 @@ const UserLogin = () => {
     e.preventDefault();
     setError("");
 
+    // TODO: Implement MongoDB-based authentication
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // alert("User login successful!");
+      // Placeholder for MongoDB authentication
+      // await loginUser(email, password);
+      console.log("Login attempt:", { email, password });
       navigate("/user-dashboard");
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Login failed. Please try again.");
     }
   };
 

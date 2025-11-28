@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Menu, X, Home, Info, ShieldQuestionMark, Settings, BaggageClaim, UserStar, Forklift, Plus, Minus, RotateCcw } from "lucide-react";
 import React from "react";
 import { useTextSize } from "../context/TextSizeContext";
-import { handleLogout } from "../utils/authFunctions";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {

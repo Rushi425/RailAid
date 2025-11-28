@@ -1,7 +1,5 @@
 // src/pages/UserRegister.jsx
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import "./AuthPages.css";
 
@@ -21,12 +19,15 @@ const UserRegister = () => {
       return;
     }
 
+    // TODO: Implement MongoDB-based registration
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      // Placeholder for MongoDB registration
+      // await registerUser(email, password);
+      console.log("Registration attempt:", { email, password });
       alert("User registration successful!");
       navigate("/user-dashboard");
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Registration failed. Please try again.");
     }
   };
 
